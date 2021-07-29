@@ -8,16 +8,17 @@ const app = express()
 const port = process.env.PORT || 3000
 
 // Define paths for express config
-const publicDirectoryPath = path.join(__dirname, '../public')
+const publicDirectoryPath = path.join(__dirname, '../public') 
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
+//console.log(publicDirectoryPath + ' ' + viewspath + ' ' + partialsPath)
 // Set Handle bars engine and views location
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
-// set up static directory to serve
+// set up static directory to serve            
 app.use(express.static(publicDirectoryPath))
 
 
